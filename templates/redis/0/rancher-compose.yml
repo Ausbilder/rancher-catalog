@@ -1,8 +1,8 @@
- .catalog:
+.catalog:
   name: Redis Cluster
   version: 3.0
   description: |
-    (Experimental) Redis Cluster.
+   (Experimental) Redis Cluster.
   minimum_rancher_version: v0.56.0
   maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
   uuid: rediscluster
