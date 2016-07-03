@@ -11,20 +11,20 @@
       description: "Number of Nodes. Note: Must #Masternodes * Replicationfactor - default 2"
       label: "Startup Node:"
       required: true
-      default: "2"
-      type: "string"
+      default: 2
+      type: "int"
     - variable: "rep_factor"
       description: "Replication Factor - default 1"
       label: "Replication Faktor"
       required: true
-      default: "1" 
-      type: "string"
+      default: 1
+      type: "int"
     - variable: "redis_port"
       description: "Redis Server Port - default 7000" 
       label: "Redis Server Port:"
       required: true
-      default: "7000"
-      type: "string"
+      default: 7000
+      type: "int"
 
 init:
   scale: 1
