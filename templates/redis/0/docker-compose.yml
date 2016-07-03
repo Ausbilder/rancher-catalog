@@ -1,5 +1,5 @@
 init:
-  image: svenahlfeld/rediscluster
+  image: svenahlfeld/rediscluster:v3.0
   links:
   - redis
   environment:
@@ -15,4 +15,4 @@ redis:
   - REDIS_NODE_PORT:${redis_port}
   - REDIS_SCALE:${redis_scale}
   - REDIS_REPLICATION:${rep_factor}
-  image: svenahlfeld/rediscluster
+  image: svenahlfeld/rediscluster:v3.0
