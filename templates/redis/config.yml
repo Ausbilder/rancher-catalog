@@ -1,4 +1,4 @@
-name: Redis Cluster
+name: Redis-Cluster
 description: |
   (Experimental) Redis cluster
 version: 1.0
