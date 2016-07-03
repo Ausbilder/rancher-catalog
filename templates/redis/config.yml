@@ -1,0 +1,6 @@
+name: Redis Cluster
+description: |
+  (Experimental) Redis cluster
+version: 1.0
+category: Clustering
+maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"

@@ -1,0 +1,40 @@
+ .catalog:
+  name: Redis Cluster
+  version: 3.0
+  description: |
+    (Experimental) Redis Cluster.
+  minimum_rancher_version: v0.56.0
+  maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
+  uuid: rediscluster
+  questions:
+    - variable: "redis_scale"
+      description: "Number of Nodes. Note: Must #Masternodes * Replicationfactor - default 2"
+      label: "Startup Node:"
+      required: true
+      default: 2
+      type: "int"
+    - variable: "rep_factor"
+      description: "Replication Factor - default 1"
+      label: "Replication Faktor"
+      required: true
+      default: 1 
+      type: "int"
+    - variable: "redis_port"
+      description: "Redis Server Port - default 7000" 
+      label: "Redis Server Port:"
+      required: true
+      default: 7000 
+      type: "int"
+
+init:
+  scale: 1
+    
+redis:
+  scale: ${redis_scale}
+  health_check:
+    port: ${redis_port}
+    interval: 5000
+    unhealthy_threshold: 3
+    request_line: ''
+    healthy_threshold: 2
+    response_timeout: 5000
