@@ -13,15 +13,21 @@
       required: true
       default: 1
       type: "int"
-    - variable: "flink_memory"
+    - variable: "flink_taskmanager_memory"
       description: "Amount of RAM per Taskmanager"
       label: "Amount of RAM for Flink:"
       required: true
       default: 4048
       type: "int"
-    - variable: "flink_cpu"
-      description: "Number of CPUs per Taskmanager" 
-      label: "Number of CPUs per Taskmanager:"
+    - variable: "flink_jobmanager_memory"
+      description: "Amount of RAM per Taskmanager"
+      label: "Amount of RAM for Flink:"
+      required: true
+      default: 4048
+      type: "int"
+    - variable: "flink_taskmanager_slots"
+      description: "Number of Taskslots per Taskmanager" 
+      label: "Number of Taskslots per Taskmanager:"
       required: true
       default: 4
       type: "int"

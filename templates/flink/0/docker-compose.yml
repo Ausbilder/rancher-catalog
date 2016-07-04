@@ -1,8 +1,8 @@
 jobmanager:
    environment:
-    FLINK_CPU: ${flink_cpu}
-    FLINK_SCALE: ${flink_scale}
-    FLINK_RAM: ${flink_memory}
+    FLINK_TM_RAM: ${flink_taskmanager_memory}
+    FLINK_JM_RAM: ${flink_jobmanager_memory}
+    FLINK_TM_SLOTS: ${flink_taskmanager_slots}
    image: svenahlfeld/flinkcluster:1.0.3
    labels:
     io.rancher.container.hostname_override: container_name
@@ -21,9 +21,9 @@ jobmanager:
 
 taskmanager:
    environment:
-    FLINK_CPU: ${flink_cpu}
-    FLINK_SCALE: ${flink_scale}
-    FLINK_RAM: ${flink_memory}
+    FLINK_TM_RAM: ${flink_taskmanager_memory}
+    FLINK_JM_RAM: ${flink_jobmanager_memory}
+    FLINK_TM_SLOTS: ${flink_taskmanager_slots}
    labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.scheduler.affinity:container_label_soft:io.rancher.stack_service.name=$${stack_name}/taskmanager
