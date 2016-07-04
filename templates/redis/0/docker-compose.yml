@@ -11,6 +11,8 @@ init:
   command: /redis/bootstrap.sh init
 
 redis:
+  labels:
+   io.rancher.container.hostname_override: container_name
   environment:
    REDIS_NODE_PORT: ${redis_port}
    REDIS_SCALE: ${redis_scale}
