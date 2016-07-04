@@ -1,17 +1,17 @@
 .catalog:
   name: Redis Cluster
-  version: 3.0
+  version: 1.0
   description: |
-   (Experimental) Redis Cluster.
+   (Experimental) Redis Cluster. Brings up a Redis 3.0 Cluster of minimum 6 Nodes. 3 Master 3 Slaves Replication Factor 1. Not dynamically scaleable.
   minimum_rancher_version: v0.56.0
   maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
   uuid: rediscluster
   questions:
     - variable: "redis_scale"
-      description: "Number of Nodes. Note: Must #Masternodes * Replicationfactor - default 2"
+      description: "Number of Nodes" 
       label: "Startup Node:"
       required: true
-      default: 2
+      default: 6
       type: "int"
     - variable: "rep_factor"
       description: "Replication Factor - default 1"
