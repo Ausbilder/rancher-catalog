@@ -1,0 +1,60 @@
+.catalog:
+  name: Apache Flink Cluster
+  version: 1.0
+  description: |
+   (Experimental) Apache Flink Cluster 1.0.3. Brings up a Cluster of 1 Jobmanager and N Nodemanagers.
+  minimum_rancher_version: v0.56.0
+  maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
+  uuid: flinkcluster
+  questions:
+    - variable: "flink_scale"
+      description: "Number of Taskmanagers" 
+      label: "Number of Taskmanagers:"
+      required: true
+      default: 1
+      type: "int"
+    - variable: "flink_memory"
+      description: "Amount of RAM per Taskmanager"
+      label: "Amount of RAM for Flink:"
+      required: true
+      default: 4048
+      type: "int"
+    - variable: "flink_cpu"
+      description: "Number of CPUs per Taskmanager" 
+      label: "Number of CPUs per Taskmanager:"
+      required: true
+      default: 4
+      type: "int"
+    - variable: "jobmanager_port"
+      description: "Port for the Jobmanager" 
+      label: "Port for the Jobmanager:"
+      required: true
+      default: 48081
+      type: "int"
+    - variable: "kafka_link"
+      description: |
+        Choose the Kafka service to use. 
+      label: "Kafka stack/service"
+      default: "kafka/broker"
+      required: true
+      type: "service"
+    - variable: "zk_link"
+      description: |
+        Choose the Zookeeper service to use. 
+      label: "Zookeeper stack/service"
+      default: "zookeeper/zk"
+      required: true
+      type: "service"
+    - variable: "redis_link"
+      description: |
+        Choose the Redis service to use. 
+      label: "Redis stack/service"
+      default: ""
+      required: false
+      type: "service"
+
+jobmanager:
+  scale: 1
+    
+taskmanager:
+  scale: ${flink_scale}

@@ -1,0 +1,37 @@
+jobmanager:
+   environment:
+    FLINK_CPU: ${flink_cpu}
+    FLINK_SCALE: ${flink_scale}
+    FLINK_RAM: ${flink_memory}
+   image: svenahlfeld/flinkcluster:1.0.3
+   labels:
+    io.rancher.container.hostname_override: container_name
+   ports:
+   - ${jobmanager_port}:8081
+   expose:
+   - 6123
+   - 22
+   external_links:
+   - ${zk_link}
+   - ${kafka_link}
+   - ${redis_link}
+   links:
+   - taskmanager
+   command: /usr/local/flink-1.0.3/bin/start-flink-cluster.sh master
+
+taskmanager:
+   environment:
+    FLINK_CPU: ${flink_cpu}
+    FLINK_SCALE: ${flink_scale}
+    FLINK_RAM: ${flink_memory}
+   labels:
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:container_label_soft:io.rancher.stack_service.name=$${stack_name}/taskmanager
+   image: svenahlfeld/flinkcluster:1.0.3
+   expose:
+   - 6121
+   - 6122
+   external_links:
+   - ${zk_link}
+   - ${kafka_link}
+   - ${redis_link}

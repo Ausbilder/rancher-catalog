@@ -1,0 +1,6 @@
+name: Apache Flink Cluster
+description: |
+  (Experimental) Apache Flink Cluster
+version: 1.0
+category: Clustering
+maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
