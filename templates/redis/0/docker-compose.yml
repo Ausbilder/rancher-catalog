@@ -3,16 +3,16 @@ init:
   links:
   - redis
   environment:
-  - REDIS_NODE_PORT:${redis_port}
-  - REDIS_SCALE:${redis_scale}
-  - REDIS_REPLICATION:${rep_factor}
+  - REDIS_NODE_PORT:'${redis_port}'
+  - REDIS_SCALE:'${redis_scale}'
+  - REDIS_REPLICATION:'${rep_factor}'
   labels:
    io.rancher.container.start_once: true
   command: /redis/bootstrap.sh init
 
 redis:
   environment:
-  - REDIS_NODE_PORT:${redis_port}
-  - REDIS_SCALE:${redis_scale}
-  - REDIS_REPLICATION:${rep_factor}
+  - REDIS_NODE_PORT:'${redis_port}'
+  - REDIS_SCALE:'${redis_scale}'
+  - REDIS_REPLICATION:'${rep_factor}'
   image: svenahlfeld/rediscluster:v3.0
