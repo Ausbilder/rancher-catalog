@@ -58,6 +58,13 @@
       default: ""
       required: false
       type: "service"
+    - variable: "es_link"
+      description: |
+        Choose the ElasticSearch service to use. 
+      label: "ElasticSearch stack/service"
+      default: ""
+      required: false
+      type: "service"
 
 jobmanager:
   scale: 1

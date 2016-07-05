@@ -15,6 +15,7 @@ jobmanager:
    - ${zk_link}
    - ${kafka_link}
    - ${redis_link}
+   - ${es_link}
    links:
    - taskmanager
    command: /usr/local/flink-1.0.3/bin/start-flink-cluster.sh master
@@ -35,3 +36,4 @@ taskmanager:
    - ${zk_link}
    - ${kafka_link}
    - ${redis_link}
+   - ${es_link}
