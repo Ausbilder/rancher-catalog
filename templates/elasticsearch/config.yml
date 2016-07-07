@@ -1,0 +1,6 @@
+name: ElasticSearch + Kibana
+description: |
+  (Experimental) ElasticSearch + Kibana
+version: 1.0
+category: ELK
+maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"
