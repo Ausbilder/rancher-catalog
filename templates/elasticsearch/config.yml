@@ -1,4 +1,4 @@
-name: ElasticSearch + Kibana
+name: ElasticSearch
 description: |
   (Experimental) ElasticSearch + Kibana
 version: 1.0
