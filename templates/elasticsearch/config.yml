@@ -1,6 +1,6 @@
 name: ElasticSearch
 description: |
-  (Experimental) ElasticSearch + Kibana
+  (Experimental) ElasticSearch
 version: 1.0
 category: ELK
 maintainer: "Sven Ahlfeld <sven.ahlfeld@gmx.net>"

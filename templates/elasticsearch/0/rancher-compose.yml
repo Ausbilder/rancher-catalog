@@ -2,9 +2,10 @@
   name: Elasticsearch
   version: 1.0
   description: "Elasticsearch. You know, for search"
+  uuid: elasticsearch
   questions:
     - variable: cluster_name
-      description: "Unique name to assign to your Elasticsearch cluster."
+      description: "Name to assign to your Elasticsearch cluster."
       label: "Cluster Name"
       type: "string"
       required: true
@@ -15,7 +16,7 @@
       type: "int"
       default: 80
       required: true
-	  
+
 elasticsearch-masters:
   metadata:
     elasticsearch:
@@ -25,6 +26,7 @@ elasticsearch-masters:
         node.data: "false"
         node.master: "true"
         network.host: "_site_"
+
 elasticsearch-datanodes:
   metadata:
     elasticsearch:
@@ -35,6 +37,7 @@ elasticsearch-datanodes:
         node.master: "false"
         http.enabled: "false"
         network.host: "_site_"
+
 elasticsearch-clients:
   metadata:
     elasticsearch:

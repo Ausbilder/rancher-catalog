@@ -38,7 +38,7 @@ elasticsearch-datanodes:
     - elasticsearch-masters:es-masters
   volumes_from:
     - elasticsearch-datavolume-datanode
-	
+
 elasticsearch-datavolume-datanode:
   labels:
     elasticsearch.datanode.config.version: '0'
@@ -50,7 +50,7 @@ elasticsearch-datavolume-datanode:
     - /opt/rancher/bin
   entrypoint: /bin/true
   image: elasticsearch:2.2.1
-  
+
 elasticsearch-base-datanode:
   labels:
     elasticsearch.datanode.config.version: '0'
@@ -64,7 +64,6 @@ elasticsearch-base-datanode:
     - elasticsearch-datavolume-datanode
   net: "container:elasticsearch-datanodes"
 
-
 elasticsearch-clients:
   image: rancher/elasticsearch-conf:v0.5.0
   labels:
@@ -74,7 +73,7 @@ elasticsearch-clients:
     - elasticsearch-masters:es-masters
   volumes_from:
     - elasticsearch-datavolume-clients
-	
+
 elasticsearch-datavolume-clients:
   labels:
     elasticsearch.datanode.config.version: '0'
