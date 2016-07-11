@@ -27,7 +27,7 @@ taskmanager:
     FLINK_TM_SLOTS: ${flink_taskmanager_slots}
    labels:
     io.rancher.container.hostname_override: container_name
-    io.rancher.scheduler.affinity: container_label_soft:io.rancher.stack_service.name=$${stack_name}/taskmanager
+    io.rancher.scheduler.affinity: container_label_soft_ne:io.rancher.stack_service.name=$${stack_name}/taskmanager
    image: svenahlfeld/flinkcluster:1.0.3
    expose:
    - 6121
